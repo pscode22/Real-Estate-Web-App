@@ -1,0 +1,138 @@
+.favMainContainer {
+    background-color: transparent;
+    margin: 42px 120px 32px 120px;
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; */
+    border-radius: .4rem;
+    min-height: 100vh;
+}
+
+
+/* -----------------------  favPage-Header ------------------------ */
+
+.pageHeader {
+    height: 48px;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; */
+    display: grid;
+    place-items: center;
+    margin: 0 24px 16px 24px;
+}
+
+.searchSection {
+   position: relative;
+   width: 50%;
+   height: 100%;
+   display: flex;
+   align-items: center; 
+   justify-content: center;
+}
+.searchBar {
+    width: 100%;
+    height: 32px;
+    padding : 12px 50px 12px 10px;
+    border-radius: .2rem;
+    outline: none;
+    /* border: none; */
+}
+
+.cancelSearch {
+    position: absolute;
+    height: 32px;
+    right: 0;
+    padding: 5px 10px;
+    background: #7265ef;
+    font-weight: 500;
+    color: #ffffff;
+    border: none;
+    border-top-right-radius: .2rem;
+    border-bottom-right-radius: .2rem;
+}
+
+/* ----------------------- favPage-Body ------------------------ */
+
+.favCardContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 24px;
+}
+
+
+
+@media (max-width : 1290px) {
+    .favMainContainer {
+        margin: 42px 20px 32px 20px;
+    }
+    .favCardContainer {
+        grid-template-columns: 1fr 1fr 1fr;
+        place-items: center;
+    }
+}
+
+@media (max-width : 1080px) {
+    .favMainContainer {
+        background-color: transparent;
+    }
+    .favCardContainer {
+        place-items: center;
+    }    
+}
+
+@media (max-width : 980px) {
+    .favCardContainer {
+        gap: .01%;
+        place-items: normal;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .card {
+        width: 280px;
+        transform: scale(0.9,0.9);
+    }
+}
+
+@media (max-width : 860px) {
+    .favCardContainer {
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        gap: 24px;
+    }
+    .card {
+        width: 350px;
+        transform: scale(1,1);
+        min-height: 360px;
+    }
+    .img {
+        min-height: 250px;
+    }
+    .badge {
+        top : 235px;
+    }
+}
+
+@media (max-width : 760px) {
+    .card{
+        width: 95%;
+    }
+}
+
+@media (max-width : 650px) {
+    .favCardContainer {
+        grid-template-columns: 1fr;
+    }
+    .img {
+        min-height: 300px;
+    }
+    .badge {
+        top : 285px;
+    }
+}
+
+@media (max-width : 320px) {
+    .card {
+        width: 100%;
+    }
+    .card .cardFooter {
+        /* color : #7268ED; */
+        font-size: 8px;
+        transform: scale(1.15,1.15);
+    }
+}

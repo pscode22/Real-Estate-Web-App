@@ -1,0 +1,253 @@
+.filterSection {
+    /* width: 100%; */
+    height: 82px;
+    background-color: #ffffff;
+    margin: 42px 120px 80px 120px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
+    border-radius: .4rem;
+    padding: 16px 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    /* position: sticky;
+    top: 12px; */
+}
+
+.block {
+    border-right: 2px solid #f0f0f0;
+    width: 300px;
+    padding-right: 52px;
+    margin: 0 0 0 24px;
+    position: relative;
+}
+
+.blockType {
+    font-weight: 600;
+    color: #757575;
+    /* width: fit-content; */
+}
+
+.blockContent {
+    margin-top: 6px;
+    font-weight: 700;
+    /* width: fit-content; */
+    /* color: black; */
+}
+
+.locationName {
+    font-weight: 700;
+    border :  1px solid transparent;
+    padding: 0px 1px;
+    font-size: 16px;
+    border-radius: .2rem;
+    /* width: 100px; */
+}
+
+.locationName:focus {
+    border: 1px solid #7265ef;
+}
+
+.dropDownIconBtn {
+    position: absolute;
+    border-radius: 50%;
+    font-size: 10px;
+    border: none;
+    color: #7265ef;
+    /* padding: 2px 3px 1px 2.8px ; */
+    background: #e8e7f7;
+    right: 18px;
+    bottom: 8px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.pricingBox {
+    position: absolute;
+    left: -20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+    width: 320px;
+    background: #ffffff;
+    padding: 24px 24px 10px 24px;
+    top: 45px;
+}
+
+.priceInput {
+    padding: 12px 10px;
+    height: 28px ;
+    width: 40%;
+    position: relative;
+}
+
+.boxFooter {
+    position: relative;
+    width: 100%;
+    /* background: #7265ef; */
+    padding: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 10px;
+}
+.boxFooter>.doneBtn {
+    background: #7265ef;
+    color: #ffffff;
+    padding: 6px 12px;
+    border: none;
+    border-radius: .2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+ .firstBlock {
+    margin-left: 40px;
+    width: 280px;
+}
+
+.fourthBlock {
+    width: 260px;
+    border: none;
+}
+
+.dropDownTypes {
+    position: absolute;
+    width: 160px;
+    margin-left : 1px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;  
+    background: #ffffff;
+    /* padding: 0 5px; */
+    z-index: 100;
+}
+
+.dropDownListItems {
+    padding: 10px 5px;
+    border-bottom: 2px solid #f0f0f0;
+    cursor: pointer;
+}
+.dropDownListItems:hover {
+    color: #ffffff;
+    background: #7265ef;
+}
+.dropDownListItems:focus {
+    background: #e8e7f7;
+    color: #7265ef;
+}
+
+.filterSearchBtnBox {
+    width: 100%;
+    height: max-content;
+    position: absolute;
+    top: 90px;
+    display: grid;
+    place-items: center;
+}
+
+.filterSearchBtn {
+    padding: 12px 24px;
+    background: #7265ef;
+    font-weight: 600;
+    color: #ffffff;
+    border: none;
+    border-radius: .2rem;
+    letter-spacing: .1rem;
+    font-size: 14px;
+}
+.filterSearchBtn:hover {
+    background: rgba(90, 77, 234,0.9);
+    cursor: pointer;
+}
+.filterSearchBtn:active {
+    background: #7268ED;
+}
+
+@media (max-width : 1290px) {
+    .filterSection {
+      margin: 42px 90px 80px 90px;
+    }
+    .thirdBlockContent {
+        width: 200px;
+    }
+    .secondBlockContent {
+        width: 200px;
+    }
+    .fourthBlockContent {
+        width: 150px;
+    }
+    .firstBlock {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width : 1080px) {
+    .filterSection {
+        margin: 42px 30px 80px 30px;
+      }  
+}
+
+@media (max-width : 980px) {
+    .filterSection {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        height: max-content;
+        /* width: fit-content;
+        padding: 24px; */
+        /* padding-left: 40px; */
+        place-items: center;
+        /* margin: 42px 100px 80px 100px; */
+        margin : 10px 0px 80px 0px;
+        width: 90%;
+        place-items: normal;
+        place-self: center;
+        margin-left: 5%;
+    }
+    .block {
+        width: 80%;
+        border-right: none;
+    }
+    .filterSearchBtnBox {
+        top: 160px;
+    }
+    .secondBlockContent {
+        margin-right: 0;
+    }
+    .pricingBox {
+        left: -80px;
+    }
+}
+
+@media (max-width : 650px) {
+    .filterSection {
+        margin-left: 3%;
+        width: 95%;
+    }
+    .filterSearchBtn {
+        left: 43%;
+    }
+}
+
+@media (max-width : 560px) {
+    .filterSection {
+        grid-template-columns: 1fr;
+    }
+    .pricingBox {
+        left: 0px;
+        width: 250px;
+        /* top: ; */
+    }
+    .filterSearchBtnBox {
+        top: 300px;
+    }
+    .secondBlock {
+        width: 77.2%;
+    }
+}
+
+@media (max-width : 300px) {
+    .pricingBox {
+        left: -20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 240px;
+    }
+}

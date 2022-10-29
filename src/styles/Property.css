@@ -1,0 +1,231 @@
+.mainContainer {
+    background-color: transparent;
+    margin: 42px 120px 32px 120px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    border-radius: .4rem;
+    min-height: 100vh;
+}
+
+
+/* ---------------- body ----------------- */
+
+.cardContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 24px;
+    /* place-items: center; */
+    
+}
+
+.card {
+    border : none;
+    width : 300px ;
+    min-height: 300px;
+    max-height : fit-content;
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    position: relative;
+    border-radius: .5rem;  
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    padding-bottom: 18px;
+    background: #ffffff;  
+}
+.img {
+    object-fit: cover;
+    width: 100%;
+    height: 152px;
+    margin: 0;
+    /* border-bottom: 1px solid black; */
+    position: relative;
+    top: -.2px;
+    box-sizing: border-box;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+}
+
+.badge {
+    position: absolute;
+    top: 137px;
+    left: -8.2px;
+    background: #5a4dea; /* #7265ef; */
+    padding: 5px 16px 5px 10px;
+    padding-left: 18px;
+    font-size: 12px;
+    border-radius: .4em;
+    font-weight: 600;
+    border-top-left-radius: .6rem;
+    z-index: 1;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap : 5px;
+    font-family: 'Fira Code', monospace;
+    /* letter-spacing: .1rem; */
+    /* border-bottom-left-radius: .51rem; */
+}
+
+.badge::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 1px;
+    top: 9px;
+    width: 7px;
+    height: 20px;
+    /* background-blend-mode: darken; */
+    /* transform: rotate(30.00028deg); */
+    background: linear-gradient(#5a4dea, #5347a4);
+    /* background-color: #7265ef; */
+    border-bottom-left-radius: 10rem;
+    /* border-right: .1px solid black; */
+    box-sizing: border-box;
+}
+
+.infoSection {
+    padding: 0 20px;
+    color: black;
+    margin-top: 22px;
+    position: relative;
+    display: block;
+}
+
+.propertyPrice {
+    font-weight: 600;
+    font-size: 22px;
+    color: #6b5fe4;
+    color : #5a4dea;
+}
+.propertyPrice>span {
+    font-size: 12px;
+    margin-left: 1px;
+    color: #757575;
+}
+
+.propertyName {
+    margin-top: 12px;
+    font-weight: 700;
+    font-size: 18px;
+    /* background-color: #757575; */
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.propertyAddress {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #757575;
+    /* background-color: black; */
+    height: 32px;
+    align-items: center;
+}
+
+.card .cardFooter {
+    display: grid;
+    font-size: 12px;
+    font-weight: 500;
+    color: #757575;
+    grid-template-columns: auto auto auto;
+    place-items: center;
+    margin-top: 12px;
+    /* padding: 0 2px; */
+    gap: 5px;
+}
+
+.card .cardFooter .info {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    /* justify-content: center ; */
+}
+.cardFooter .cardFooterIcons {
+    color : #7268ED;
+    font-size: 15px;
+}
+
+.errorMsg {
+    font-size: 20px;
+    font-weight: 600;
+    gap : 10px;
+}
+
+@media (max-width : 1290px) {
+    .cardContainer {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width : 1080px) {
+    .mainContainer {
+        background-color: transparent;
+        margin: 42px 20px 32px 20px;
+    }
+    .cardContainer {
+        place-items: center;
+    }    
+}
+
+@media (max-width : 980px) {
+    .cardContainer {
+        gap: .01%;
+        place-items: normal;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .card {
+        width: 280px;
+        transform: scale(0.9,0.9);
+    }
+}
+
+@media (max-width : 860px) {
+    .cardContainer {
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        gap: 24px;
+    }
+    .card {
+        width: 350px;
+        transform: scale(1,1);
+        min-height: 360px;
+    }
+    .img {
+        min-height: 250px;
+    }
+    .badge {
+        top : 235px;
+    }
+}
+
+@media (max-width : 760px) {
+    .card{
+        width: 95%;
+    }
+}
+
+@media (max-width : 650px) {
+    .cardContainer {
+        grid-template-columns: 1fr;
+    }
+    .img {
+        min-height: 300px;
+    }
+    .badge {
+        top : 285px;
+    }
+}
+
+@media (max-width : 320px) {
+    .card {
+        width: 100%;
+    }
+    .card .cardFooter {
+        /* color : #7268ED; */
+        font-size: 8px;
+        transform: scale(1.15,1.15);
+    }
+}

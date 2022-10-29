@@ -1,0 +1,30 @@
+.App {
+  min-height: 100vh;
+  min-width: 98vw;
+  background: #f8f7fd;
+  position: relative;
+  padding-bottom: 24px;
+}
+
+*{
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.favoriteBtn {
+  position: absolute;
+  right: 30px;
+  top: -5px;
+  padding: 11px 10.7px 6px 10px ;
+  border-radius: 50%;
+  border: 1px solid #757575;
+  background: white;
+  cursor: pointer;
+}
+.favIcon {
+  font-size: 20px;
+  color : #7265ef;
+  /* border-color: #e31b23 ; */
+}
