@@ -1,10 +1,8 @@
 .header {
-    /* min-width: 100%; */
     min-height: 72px;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;  
     padding-left: 44px;
-    /* padding-right: 36px; */
     display: grid;
     grid-template-columns: 1fr 440px 1fr;
     align-items: center;
@@ -50,7 +48,6 @@
     color : #7265ef;
 }
 .heartIconBtn:hover {
-    /* border: 1px solid #757575; */
     border: 1px solid #7268ED;
 }
 
@@ -65,13 +62,6 @@
 .goBackIcon {
    margin-top: 7px;
 }
-
-/* @media (max-width : 1280px) {
-
-    .heading {
-        font-size: 24px;
-    }
-} */
 
 @media (max-width : 800px) {
     .header {
@@ -91,12 +81,9 @@
 
 @media (max-width : 640px) {
     .header {
-        grid-template-columns: 1fr 180px 1fr;
+        grid-template-columns: 1fr 230px 1fr;
         padding-right: 24px;
-        /* padding-left: 0; */
     }
-
-    
     .logo{
         font-size: 30px;
         margin-top: 1px;
@@ -105,17 +92,11 @@
         font-size: 22px;
         display: none;
     }
-
     .heading {
       font-size: 22px;
-      margin-left: 0;
+      margin-left: 10px;
       margin-right: 10px;
     }
-
-    /* .headingMobile {
-        display: block;
-    } */
-
     .heartIconBtn,.goBackBtn {
         margin-right: 0;
     }
@@ -123,7 +104,6 @@
 
 @media (max-width : 360px) {
     .header {
-        /* padding: 0 10px; */
         padding-left: 0;
         grid-template-columns: 1fr 20px;
     }

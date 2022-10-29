@@ -18,15 +18,14 @@ export default function Header({favIcon, setFavIcon}) {
        <div style={{width : 'fit-content'}} className='leftSideBox'>
             <p style={{display : 'flex', alignItems : 'center' , width : 'fit-content'}}>
                 <TbSmartHome className='logo'/> 
-                {/* <RiHomeSmile2Fill size={42} style={{color : '#7268ED'}} />
-                <RiHomeSmileFill size={40} style={{color : '#7268ED'}} /> */}
                 <span className='name'>Estatery</span>
             </p>
        </div>
 
        <div className='heading' >
         <p>
-          Rent a Property
+          {/* Rent a Property */}
+          Properties For Rent
         </p>
        </div>
 
@@ -38,12 +37,6 @@ export default function Header({favIcon, setFavIcon}) {
                 }
         </div>
     </div>
-
-    {/* <div className='headingMobile' >
-        <p>
-           Search Properties To Rent
-        </p>
-       </div> */}
     </>
   )
 }
