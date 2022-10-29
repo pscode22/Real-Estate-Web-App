@@ -39,13 +39,13 @@ export default function FilterSection({ setLoading }) {
     const data = await axios.get(`/.netlify/functions/function`, { params : { ...urlParams } })
     .then(res => { 
       setLoading(false); 
-      return {...res};
+      return {...res, statusText : "OK"};
     })
     .catch(err => { console.log(err) 
       setLoading(false); 
       return {...err, statusText : "ERROR"};
     });
-     
+     console.log({...data})
     return setPropertyList({...data});
   }
 

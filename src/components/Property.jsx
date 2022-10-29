@@ -7,13 +7,11 @@ import  { BsGridFill } from 'react-icons/bs';
 import millify from 'millify';
 import { FavCardContext } from '../context/favorites/favCard';
 import FavBtn, { favBtnClicked } from './FavButton';
-// import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 import { propertyContext } from '../context/showProperties/propContext';
 import ReactLoading from 'react-loading';
 
 
-export default function Property({ loading, setLoading }) {
+export default function Property({ loading }) {
 
   const favCards = React.useContext(FavCardContext);
   const { cardItems, setCardItems } = favCards;
@@ -37,8 +35,7 @@ export default function Property({ loading, setLoading }) {
               propertyList.data.hits.map(item => (
               <div className="card" key={item.id} >
 
-                <div style={{backgroundImage: `url(${item.coverPhoto.url})`, backgroundSize : 'cover', backgroundRepeat: 'no-repeat', width : '100%'}}   className='img' loading="lazy" >
-                  {/* <LazyLoadImage   src={item.coverPhoto.url}   alt="propertyImage" className="img" effect='blur' width={'100%'} /> */}
+                <div style={{backgroundImage: `url(${item.coverPhoto.url})`, backgroundSize : 'cover', backgroundRepeat: 'no-repeat', width : '100%'}}   className='img'>
                 </div>
  
                 <span className="badge"> 
@@ -93,7 +90,7 @@ export default function Property({ loading, setLoading }) {
           :
           <>
           <div style={{display : "grid", placeItems : "center", width : "100%", height : "350px"}}  className="errorMsg">
-            {propertyList.message || "An Unknown Error Occured."}
+            {propertyList?.message || "An Unknown Error Occured."}
           </div>
           </>
         }
