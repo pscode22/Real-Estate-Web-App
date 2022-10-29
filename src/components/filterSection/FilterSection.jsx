@@ -5,19 +5,17 @@ import Location from './childrens/Location';
 import PriceBox from './childrens/PriceBox';
 import BathsAndBeds from './childrens/BedsAndBaths';
 import PropertyType from './childrens/PropertyType';
-import  { fetchApi, url } from '../../utils/FetchApi'
 import axios from 'axios';
 import { propertyContext } from '../../context/showProperties/propContext';
-// import func from '../../../netlify/functions/function';
 
 
-export default function FilterSection() { 
+export default function FilterSection({ setLoading }) { 
 
   const filters = React.useContext(filtersContext);
   const {setValues : { filterValueState : { min_Price, max_Price, property_id, baths, beds, locationId }}} = filters;
 
   const showProperties = React.useContext(propertyContext);
-  const { propertyList, setPropertyList } = showProperties;
+  const { setPropertyList } = showProperties;
 
   const [priceList, setPriceList] = React.useState({
     minimum : false,
@@ -36,20 +34,23 @@ export default function FilterSection() {
       categoryExternalID: property_id,
     }
 
-    // fetchApi(url,urlParams);
-    await axios.get(`/.netlify/functions/function`, { params : { ...urlParams } })
-    .then(res => setPropertyList({...res}))
-    .catch(err => setPropertyList({...err, statusText : "ERROR"}));
+    setLoading(true);
 
-    // return data
-    // console.log(fetchObj);
-    // setProperties({...fetchObj})
-
+    const data = await axios.get(`/.netlify/functions/function`, { params : { ...urlParams } })
+    .then(res => { 
+      setLoading(false); 
+      return {...res};
+    })
+    .catch(err => { console.log(err) 
+      setLoading(false); 
+      return {...err, statusText : "ERROR"};
+    });
+     
+    return setPropertyList({...data});
   }
-  
-  
+
   return ( 
-    <>   {/*console.log(display.propertyType) */}
+    <>   
     <div className='filterSectionContainer' style={{position : 'relative'}}>
       <div className='filterSection'>
 

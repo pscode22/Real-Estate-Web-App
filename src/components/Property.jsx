@@ -10,9 +10,10 @@ import FavBtn, { favBtnClicked } from './FavButton';
 // import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { propertyContext } from '../context/showProperties/propContext';
+import ReactLoading from 'react-loading';
 
 
-export default function Property() {
+export default function Property({ loading, setLoading }) {
 
   const favCards = React.useContext(FavCardContext);
   const { cardItems, setCardItems } = favCards;
@@ -33,12 +34,12 @@ export default function Property() {
         { 
           propertyList.statusText === "OK"?
           propertyList.data.hits.length !== 0?
-          <div className='cardContainer'>
-            {
+          <div className='cardContainer' style={{display : (loading? "none" : "grid")}}>
+            { 
               propertyList.data.hits.map(item => (
               <div className="card" key={item.id} >
 
-                <div style={{backgroundImage: `url(${item.coverPhoto.url})`, backgroundSize : 'cover', backgroundRepeat: 'no-repeat', width : '100%'}} className='img' loading="lazy" >
+                <div style={{backgroundImage: `url(${item.coverPhoto.url})`, backgroundSize : 'cover', backgroundRepeat: 'no-repeat', width : '100%'}}   className='img' loading="lazy" >
                   {/* <LazyLoadImage   src={item.coverPhoto.url}   alt="propertyImage" className="img" effect='blur' width={'100%'} /> */}
                 </div>
  
@@ -100,6 +101,11 @@ export default function Property() {
           </div>
           </>
         }
+
+        <div style={{ display: (loading? "block" : "none"), }} className="setLoading">
+          <ReactLoading type='spin' color='#7268ED' width={"100px"} className="loadingSvg" />
+        </div>
+
       </div>
     </>
   )
