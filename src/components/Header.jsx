@@ -24,7 +24,6 @@ export default function Header({favIcon, setFavIcon}) {
 
        <div className='heading' >
         <p>
-          {/* Rent a Property */}
           Properties For Rent
         </p>
        </div>
