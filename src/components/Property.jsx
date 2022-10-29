@@ -21,8 +21,6 @@ export default function Property({ loading, setLoading }) {
   const showProperties = React.useContext(propertyContext);
   const { propertyList } = showProperties;
 
-  //console.log(cardItems)
-
   const handleClick = (e, iconfill, setIconFill) => {
     return favBtnClicked(e, iconfill, setIconFill, cardItems, setCardItems, propertyList);
   }
@@ -54,7 +52,6 @@ export default function Property({ loading, setLoading }) {
                       <p className="propertyPrice">AED {millify(item.price)}<span>/month</span></p>
           
                       <p className="propertyName">{item.title.length <= 40? item.title : item.title.slice(0,41)+'...'}</p> 
-                      {/*  maximun 35-40 charcters for 2 line  */}
           
                       <FavBtn id={item.id} favCards={favCards} handleClick={handleClick} />
           
@@ -96,8 +93,7 @@ export default function Property({ loading, setLoading }) {
           :
           <>
           <div style={{display : "grid", placeItems : "center", width : "100%", height : "350px"}}  className="errorMsg">
-            {propertyList.message}
-            {/* Request failed with status code 404 */}
+            {propertyList.message || "An Unknown Error Occured."}
           </div>
           </>
         }

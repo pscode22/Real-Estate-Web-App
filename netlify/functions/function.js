@@ -20,7 +20,7 @@ exports.handler = async function (event) {
       ...event.queryStringParameters,
     },
     headers: {
-      "X-RapidAPI-Key": process.env.REACT_APP_X_RAPID_API_KEY,
+      "X-RapidAPI-Key": process.env.REACT_APP_X_RAPID_API_KE,
       "X-RapidAPI-Host": "bayut.p.rapidapi.com",
     },
   };
